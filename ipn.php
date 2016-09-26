@@ -1,4 +1,3 @@
-
 <?php
 // Author: Monnier Antoine
 // Revision Notes
@@ -29,7 +28,7 @@ $req .= "&$key=$value";
 $header = "POST /cgi-bin/webscr HTTP/1.1\r\n";
 $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 
-  $header .= "Host: www.sandbox.paypal.com\r\n";  // www.paypal.com for a live site
+	$header .= "Host: www.paypal.com\r\n";  // www.paypal.com for a live site
 
 $header .= "Content-Length: " . strlen($req) . "\r\n";
 $header .= "Connection: close\r\n\r\n";
@@ -44,176 +43,146 @@ else
 	$fp = fsockopen ('ssl://www.paypal.com', 443, $errno, $errstr, 30);
 }
 
-
 // assign posted variables to local variables
-$item_name = $_POST['item_name'];
+$item_name[0] = $_POST['item_name1'];
+$item_name[1] = $_POST['item_name2'];
+$item_name[2] = $_POST['item_name3'];
+$item_name[3] = $_POST['item_name4'];
+$item_name[4] = $_POST['item_name5'];
+$item_name[5] = $_POST['item_name6'];
+$item_name[6] = $_POST['item_name7'];
+$item_name[7] = $_POST['item_name8'];
+$item_name[8] = $_POST['item_name9'];
+$item_name[9] = $_POST['item_name10'];
+$item_name[10] = $_POST['item_name11'];
+$item_name[11] = $_POST['item_name12'];
+$item_name[12] = $_POST['item_name13'];
+$item_name[13] = $_POST['item_name14'];
+$item_name[14] = $_POST['item_name15'];
+$item_name[15] = $_POST['item_name16'];
+$item_name[16] = $_POST['item_name17'];
+$item_name[17] = $_POST['item_name18'];
+$item_name[18] = $_POST['item_name19'];
+$item_name[19] = $_POST['item_name20'];
+$item_name[20] = $_POST['item_name21'];
+$item_name[21] = $_POST['item_name22'];
+$item_name[22] = $_POST['item_name23'];
+$item_name[23] = $_POST['item_name24'];
+$item_name[24] = $_POST['item_name25'];
 $business = $_POST['business'];
-$item_number = $_POST['item_number'];
-$payment_status = $_POST['payment_status'];
-$mc_gross = $_POST['mc_gross'];
-$payment_currency = $_POST['mc_currency'];
-$txn_id = $_POST['txn_id'];
-$receiver_email = $_POST['receiver_email'];
-$receiver_id = $_POST['receiver_id'];
-$quantity = $_POST['quantity'];
-$num_cart_items = $_POST['num_cart_items'];
+$quantity[0] = $_POST['quantity1'];
+$quantity[1] = $_POST['quantity2'];
+$quantity[2] = $_POST['quantity3'];
+$quantity[3] = $_POST['quantity4'];
+$quantity[4] = $_POST['quantity5'];
+$quantity[5] = $_POST['quantity6'];
+$quantity[6] = $_POST['quantity7'];
+$quantity[7] = $_POST['quantity8'];
+$quantity[8] = $_POST['quantity9'];
+$quantity[9] = $_POST['quantity10'];
+$quantity[10] = $_POST['quantity11'];
+$quantity[11] = $_POST['quantity12'];
+$quantity[12] = $_POST['quantity13'];
+$quantity[13] = $_POST['quantity14'];
+$quantity[14] = $_POST['quantity15'];
+$quantity[15] = $_POST['quantity16'];
+$quantity[16] = $_POST['quantity17'];
+$quantity[17] = $_POST['quantity18'];
+$quantity[18] = $_POST['quantity19'];
+$quantity[19] = $_POST['quantity20'];
+$quantity[20] = $_POST['quantity21'];
+$quantity[21] = $_POST['quantity22'];
+$quantity[22] = $_POST['quantity23'];
+$quantity[23] = $_POST['quantity24'];
+$quantity[24] = $_POST['quantity25'];
+$mc_gross[0] = $_POST['mc_gross_1'];
+$mc_gross[1] = $_POST['mc_gross_2'];
+$mc_gross[2] = $_POST['mc_gross_3'];
+$mc_gross[3] = $_POST['mc_gross_4'];
+$mc_gross[4] = $_POST['mc_gross_5'];
+$mc_gross[5] = $_POST['mc_gross_6'];
+$mc_gross[6] = $_POST['mc_gross_7'];
+$mc_gross[7] = $_POST['mc_gross_8'];
+$mc_gross[8] = $_POST['mc_gross_9'];
+$mc_gross[9] = $_POST['mc_gross_10'];
+$mc_gross[10] = $_POST['mc_gross_11'];
+$mc_gross[11] = $_POST['mc_gross_12'];
+$mc_gross[12] = $_POST['mc_gross_13'];
+$mc_gross[13] = $_POST['mc_gross_14'];
+$mc_gross[14] = $_POST['mc_gross_15'];
+$mc_gross[15] = $_POST['mc_gross_16'];
+$mc_gross[16] = $_POST['mc_gross_17'];
+$mc_gross[17] = $_POST['mc_gross_18'];
+$mc_gross[18] = $_POST['mc_gross_19'];
+$mc_gross[19] = $_POST['mc_gross_20'];
+$mc_gross[20] = $_POST['mc_gross_21'];
+$mc_gross[21] = $_POST['mc_gross_22'];
+$mc_gross[22] = $_POST['mc_gross_23'];
+$mc_gross[23] = $_POST['mc_gross_24'];
+$mc_gross[24] = $_POST['mc_gross_25'];
 $payment_date = $_POST['payment_date'];
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$payment_type = $_POST['payment_type'];
-$payment_status = $_POST['payment_status'];
-$payment_gross = $_POST['payment_gross'];
-$payment_fee = $_POST['payment_fee'];
-$settle_amount = $_POST['settle_amount'];
-$memo = $_POST['memo'];
 $payer_email = $_POST['payer_email'];
-$txn_type = $_POST['txn_type'];
-$payer_status = $_POST['payer_status'];
-$address_street = $_POST['address_street'];
-$address_city = $_POST['address_city'];
-$address_state = $_POST['address_state'];
-$address_zip = $_POST['address_zip'];
-$address_country = $_POST['address_country'];
-$address_status = $_POST['address_status'];
-$item_number = $_POST['item_number'];
-$tax = $_POST['tax'];
-$option_name1 = $_POST['option_name1'];
-$option_selection1 = $_POST['option_selection1'];
-$option_name2 = $_POST['option_name2'];
-$option_selection2 = $_POST['option_selection2'];
-$for_auction = $_POST['for_auction'];
-$invoice = $_POST['invoice'];
 $custom = $_POST['custom'];
-$notify_version = $_POST['notify_version'];
-$verify_sign = $_POST['verify_sign'];
-$payer_business_name = $_POST['payer_business_name'];
-$payer_id =$_POST['payer_id'];
-$mc_currency = $_POST['mc_currency'];
-$mc_fee = $_POST['mc_fee'];
-$exchange_rate = $_POST['exchange_rate'];
-$settle_currency  = $_POST['settle_currency'];
-$parent_txn_id  = $_POST['parent_txn_id'];
-$pending_reason = $_POST['pending_reason'];
-$reason_code = $_POST['reason_code'];
-
-
-// subscription specific vars
-
-$subscr_id = $_POST['subscr_id'];
-$subscr_date = $_POST['subscr_date'];
-$subscr_effective  = $_POST['subscr_effective'];
-$period1 = $_POST['period1'];
-$period2 = $_POST['period2'];
-$period3 = $_POST['period3'];
-$amount1 = $_POST['amount1'];
-$amount2 = $_POST['amount2'];
-$amount3 = $_POST['amount3'];
-$mc_amount1 = $_POST['mc_amount1'];
-$mc_amount2 = $_POST['mc_amount2'];
-$mc_amount3 = $_POST['mcamount3'];
-$recurring = $_POST['recurring'];
-$reattempt = $_POST['reattempt'];
-$retry_at = $_POST['retry_at'];
-$recur_times = $_POST['recur_times'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-//auction specific vars
-
-$for_auction = $_POST['for_auction'];
-$auction_closing_date  = $_POST['auction_closing_date'];
-$auction_multi_item  = $_POST['auction_multi_item'];
-$auction_buyer_id  = $_POST['auction_buyer_id'];
-
 
 if (!$fp)
 {
-	
 }
 else
 {
-	
 	fputs ($fp, $header . $req);
 	$found=false;
 	while (!feof($fp) && !$found) 
 	{
-		
 		$res = fgets ($fp, 1024);
-		
-		
 		if (stripos($res, "VERIFIED") !== false)
 		{
-		
-			$found=true;
-			
-			//create MySQL connection
-			$Connect = @mysql_connect($DB_Server, $DB_Username, $DB_Password)
-			or die("Couldn't connect to MySQL:<br>" . mysql_error() . "<br>" . mysql_errno());
-			
-			
-			//select database
-			$Db = @mysql_select_db($DB_DBName, $Connect)
-			or die("Couldn't select database:<br>" . mysql_error(). "<br>" . mysql_errno());
-			
-			
-			$fecha = date("m")."/".date("d")."/".date("Y");
-			$fecha = date("Y").date("m").date("d");
-			
-		
-			
-			//execute query
-		
-		
-		    if ($txn_type == "cart")
-		    {
-		    	
-		    }
-		    else
-		    {
-				
-				$sandbox="true";
-				
-				if($DBsandbox)
+			$length = count($item_name);
+			for ($i = 0; $i < $length; $i++) 
+			{
+				if (($item_name[$i] != "") && ($mc_gross[$i] != ""))
 				{
-					$sandbox="true";
+					$quantityLength = $quantity[$i];
+					$mc_gross[$i] = ($mc_gross[$i] / $quantity[$i]);
+					for ($j = 0; $j < $quantityLength; $j++)
+					{
+						$found=true;
+						//create MySQL connection
+						$Connect = @mysql_connect($DB_Server, $DB_Username, $DB_Password)
+						or die("Couldn't connect to MySQL:<br>" . mysql_error() . "<br>" . mysql_errno());
+						//select database
+						$Db = @mysql_select_db($DB_DBName, $Connect)
+						or die("Couldn't select database:<br>" . mysql_error(). "<br>" . mysql_errno());
+						$fecha = date("m")."/".date("d")."/".date("Y");
+						$fecha = date("Y").date("m").date("d");
+						//execute query
+						if($DBsandbox)
+						{
+							$sandbox="true";
+						}
+						else
+						{
+							$sandbox="false";
+						}
+                        // Table Structure 1:id(int)*AUTO_INCREMENT, 2:item_name(text), 3:username(tinytext), 4:amount(tinytext), 5:date(text), 6:processed(text), 7:sandbox(text), 8:first_name(text), 9:last_name(text), 10:payer_email(text), 11:expires(text), 12:expired(text), 13:canGet(int)
+						$strQuery="INSERT INTO donations (username, item_name, amount, date, processed, sandbox, first_name, last_name, payer_email, expires, expired, canGet)";
+						$strQuery.=" VALUES ('".$custom."','".$item_name[$i]."','".$mc_gross[$i]."','".$payment_date."','false','".$sandbox."','".$first_name."','".$last_name."','".$payer_email."','null','false',1);";
+						$result=mysql_query($strQuery);
+					}
 				}
-				else
-				{
-					$sandbox="false";
-				}
-				
-				
-				
-				$strQuery="INSERT INTO donations (username, amount, date, processed, sandbox, first_name, last_name, payer_email, expires, expired, canGet)";
-				$strQuery.=" VALUES ('".$custom."','".$mc_gross."','".$payment_date."','false','".$sandbox."','".$first_name."','".$last_name."','".$payer_email."','null','false',1);";
-				 
-			
-				$result=mysql_query($strQuery);
-			
-				
-		    }
-		
-			
+			}
 			// send an email in any case
 			echo "Verified";
-			mail($notify_email, "VERIFIED IPN", "$res\n $req\n $strQuery\n $struery\n  $strQuery2");
-		
-		
+			mail($notify_email, "VERIFIED IPN", "$res\n $req\n $strQuery\n");
 		}
-		
 		// if the IPN POST was 'INVALID'...do this
-		
-		
 		else if (stripos($res, "INVALID") !== false)
 		{
-				$found=true;
+			$found=true;
 			// log for manual investigation
-			
 			mail($notify_email, "INVALID IPN", "$res\n $req");
 		}
 	}	
 	fclose ($fp);
-}
-
-?>
-	
+}?>

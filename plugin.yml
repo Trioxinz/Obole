@@ -1,25 +1,12 @@
 name: Obole
-main: me.monnierant.obole.Obole
-version: 1.6
-description: Gestion d'un system de don.
-author: Monnier Antoine
+main: me.monnierant.obole.Donation
+version: 3.0
+description: Donation system.
+author: Monnier Antoine, Trioxinz
 commands:
-  obole:
-    description: Obole plugin.
-    usage: /obole
-  ob:
-    description: Obole plugin.
-    usage: /ob
+  donationreload:
+    description: Reloads the configuration file for the donation system.
+    usage: /donationreload
 permissions:
-  obole.get:
-    description: Ability to get cadeaux.
-  obole.get.accept:
-    description: Ability to realy get cadeaux.
-  obole.check:
-    description: Ability to check on donations and view their information.
-  obole.setwall:
-    description: Ability to set the sign wall that new donator's names are added to.
-  obole.reload:
-    description: Ability to reload the plugin configuration.
-  obole.recent:
-    description: Ability to view a listing of recent donations.
+  Donation.Admin:
+        description: Gives admin access to the donation system.
